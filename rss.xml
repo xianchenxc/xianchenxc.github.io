@@ -1,4 +1,87 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[HelloCode]]></title><description><![CDATA[A blog recording the good life.]]></description><link>https://xianchenxc.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 12 Sep 2021 13:27:59 GMT</lastBuildDate><item><title><![CDATA[在 windows 上配置 c/c++ 开发环境]]></title><description><![CDATA[作为一个前端开发工程师，接触最多的编辑器就是 vscode，所以在我需要搭建c/c++开发环境时，第一选择就是 vscode，差点没把我劝退了🙃。 在进入到 vscode 配置之前，我们需要了解几个工具，以及工具的作用。只有清楚这些工具的作用，才能更好的理解 vscode…]]></description><link>https://xianchenxc.github.io/re-learning-series/tools/how-to-configure-cpp-debugger-with-vscode/</link><guid isPermaLink="false">https://xianchenxc.github.io/re-learning-series/tools/how-to-configure-cpp-debugger-with-vscode/</guid><pubDate>Sat, 11 Sep 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;作为一个前端开发工程师，接触最多的编辑器就是 vscode，所以在我需要搭建c/c++开发环境时，第一选择就是 vscode，差点没把我劝退了🙃。&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[HelloCode]]></title><description><![CDATA[A blog recording the good life.]]></description><link>https://xianchenxc.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 20 Sep 2021 11:18:33 GMT</lastBuildDate><item><title><![CDATA[双指针]]></title><description><![CDATA[双指针（two-pointers…]]></description><link>https://xianchenxc.github.io/re-learning-series/algorithms/two-pointers-technique/</link><guid isPermaLink="false">https://xianchenxc.github.io/re-learning-series/algorithms/two-pointers-technique/</guid><pubDate>Mon, 20 Sep 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;双指针（two-pointers) 指的是在迭代对象的过程中，使用两个相同方向或者相反方向的指针进行扫描。在处理&lt;strong&gt;有序&lt;/strong&gt;数组搜索问题中，简单且高效。&lt;/p&gt;
+&lt;h2&gt;快慢指针&lt;/h2&gt;
+&lt;h2&gt;对撞指针&lt;/h2&gt;
+&lt;p&gt;定义两个指针：左指针 &lt;code class=&quot;language-text&quot;&gt;left&lt;/code&gt; 和右指针 &lt;code class=&quot;language-text&quot;&gt;right&lt;/code&gt;，且使左指针指向数组左侧，右指针指向数组右侧。在迭代过程中，左指针不断右移，右指针不断左移，直到发生&lt;strong&gt;碰撞&lt;/strong&gt;。&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;// 伪代码, 数组长度为 arraySize
+int left = 0;
+int right = arraySize;
+
+while(left &amp;lt;= right) {
+  if (condition) {
+    left++;
+  }
+
+  if (another condition) {
+    right--;
+  }
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;有序数组的平方&lt;/h3&gt;
+&lt;p&gt;给你一个按&lt;strong&gt;非递减顺序&lt;/strong&gt;排序的整数数组 nums，返回&lt;strong&gt;每个数字的平方&lt;/strong&gt;组成的新数组，要求也按&lt;strong&gt;非递减顺序&lt;/strong&gt;排序。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://leetcode-cn.com/problems/squares-of-a-sorted-array/&quot;&gt;有序数组的平方&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;解决思路：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;关键字&lt;strong&gt;非递减顺序&lt;/strong&gt;，说明数组是有序的，可以使用双指针；&lt;/li&gt;
+&lt;li&gt;假设存在一个 k，使得：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;i &amp;#x3C; k, nums[i] &amp;#x3C; 0&lt;/li&gt;
+&lt;li&gt;k &amp;#x3C; i, 0 &amp;#x3C; nums[i]&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&quot;3&quot;&gt;
+&lt;li&gt;平方后，可得：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;i &amp;#x3C; k, nums 顺序性发生变化，平方后的数组为降序，↓&lt;/li&gt;
+&lt;li&gt;k &amp;#x3C; i, nums 顺序性不变，升序 ↑。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&quot;4&quot;&gt;
+&lt;li&gt;令 left = 0, right = nums.length - 1，那么最大元素为 max(left, right)：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;若 left 更大，left 为剩余最大元素，left 指针所指向的元素填入 ans 数组，同时 left 指针右移&lt;/li&gt;
+&lt;li&gt;若 right 更大，right 为剩余中最大元素，right 指针所指向的元素填入 ans 数组，同时 right 指针左移&lt;/li&gt;
+&lt;li&gt;不断迭代，直至左右指针发生碰撞。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;token function-variable function&quot;&gt;sortedSquares&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;nums&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;var&lt;/span&gt; ans &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;   &lt;span class=&quot;token comment&quot;&gt;// 结构数组&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;var&lt;/span&gt; i &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; nums&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;length &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;  &lt;span class=&quot;token comment&quot;&gt;// &lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;var&lt;/span&gt; left &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;var&lt;/span&gt; right &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; nums&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;length &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  
+  &lt;span class=&quot;token keyword&quot;&gt;while&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;left &lt;span class=&quot;token operator&quot;&gt;&amp;lt;=&lt;/span&gt; right&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;nums&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;left&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; nums&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;left&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;lt;=&lt;/span&gt; nums&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;right&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; nums&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;right&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+      ans&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;i&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; nums&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;right&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; nums&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;right&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+      right&lt;span class=&quot;token operator&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+      ans&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;i&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; nums&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;left&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; nums&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;left&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+      left&lt;span class=&quot;token operator&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+    i&lt;span class=&quot;token operator&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+  &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; ans&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[线性表]]></title><description><![CDATA[线性表（Linear List） 线性表是 n (n ≥ 0) 个数据元素的一个有限的序列。记为 其中，L 是表名，ai 是表中数据元素，是不可再分割的原子数据，亦称为结点或表项。n 为表的长度，若 n = 0 叫做空表。第一个表项为表头，最后一个表项为表尾。 ADT]]></description><link>https://xianchenxc.github.io/re-learning-series/data-structure/linear-list/</link><guid isPermaLink="false">https://xianchenxc.github.io/re-learning-series/data-structure/linear-list/</guid><pubDate>Wed, 15 Sep 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;线性表（Linear List）&lt;/h2&gt;
+&lt;p&gt;线性表是 n (n ≥ 0) 个数据元素的一个&lt;strong&gt;有限&lt;/strong&gt;的序列。记为&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt; L = (a1, a2, ... an)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;其中，L 是表名，ai 是表中数据元素，是不可再分割的原子数据，亦称为结点或表项。n 为表的长度，若 n = 0 叫做空表。第一个表项为表头，最后一个表项为表尾。&lt;/p&gt;
+&lt;h3&gt;ADT&lt;/h3&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;ADT LinearList is
+Objects: n(≥ 0) 个原子表项的一个有限序列。每个表项的数据类型为 T。
+Function:
+  create()
+  int Length()
+  int search(T&amp;amp; x)
+  int Locate(int i)             定位函数：返回第 i 个表项在表中位置
+  bool getData(int i, T&amp;amp; x)
+  void setData(int i, T&amp;amp; x)
+  bool Insert(int i, T&amp;amp; x)
+  bool Remove(int i, T&amp;amp; x)
+  bool IsEmpty()
+  bool IsFull()
+  void CopyList(List&amp;lt;T&gt;&amp;amp; L)
+  void Sort()
+end LinearList&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[在 windows 上配置 c/c++ 开发环境]]></title><description><![CDATA[作为一个前端开发工程师，接触最多的编辑器就是 vscode，所以在我需要搭建c/c++开发环境时，第一选择就是 vscode，差点没把我劝退了🙃。 在进入到 vscode 配置之前，我们需要了解几个工具，以及工具的作用。只有清楚这些工具的作用，才能更好的理解 vscode…]]></description><link>https://xianchenxc.github.io/re-learning-series/tools/how-to-configure-cpp-debugger-with-vscode/</link><guid isPermaLink="false">https://xianchenxc.github.io/re-learning-series/tools/how-to-configure-cpp-debugger-with-vscode/</guid><pubDate>Sat, 11 Sep 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;作为一个前端开发工程师，接触最多的编辑器就是 vscode，所以在我需要搭建c/c++开发环境时，第一选择就是 vscode，差点没把我劝退了🙃。&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;cpp&quot;&gt;&lt;pre class=&quot;language-cpp&quot;&gt;&lt;code class=&quot;language-cpp&quot;&gt;&lt;span class=&quot;token macro property&quot;&gt;&lt;span class=&quot;token directive-hash&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;token directive keyword&quot;&gt;include&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&amp;lt;iostream&gt;&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&quot;token keyword&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;namespace&lt;/span&gt; std&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 
