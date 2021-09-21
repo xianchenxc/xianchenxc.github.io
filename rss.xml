@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[HelloCode]]></title><description><![CDATA[A blog recording the good life.]]></description><link>https://xianchenxc.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 21 Sep 2021 09:45:13 GMT</lastBuildDate><item><title><![CDATA[LEB128 编码格式]]></title><description><![CDATA[LEB 128（Little Endian Base 128）是一种变长的整数压缩编码形式。它被应用于 DWARF debug file format，wasm 的整数字面量的二进制编码，以及 quickjs 的字节码中。 编码 每个 LEB128 编码值均由 1-…]]></description><link>https://xianchenxc.github.io/quickjs/leb128/</link><guid isPermaLink="false">https://xianchenxc.github.io/quickjs/leb128/</guid><pubDate>Tue, 21 Sep 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;LEB 128（Little Endian Base 128）是一种变长的整数压缩编码形式。它被应用于 &lt;a href=&quot;https://en.wikipedia.org/wiki/DWARF&quot;&gt;DWARF&lt;/a&gt; debug file format，wasm 的整数字面量的二进制编码，以及 quickjs 的字节码中。&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[HelloCode]]></title><description><![CDATA[A blog recording the good life.]]></description><link>https://xianchenxc.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 21 Sep 2021 10:00:01 GMT</lastBuildDate><item><title><![CDATA[LEB128 编码格式]]></title><description><![CDATA[LEB 128（Little Endian Base 128）是一种变长的整数压缩编码形式。它被应用于 DWARF debug file format，wasm 的整数字面量的二进制编码，以及 quickjs 的字节码中。 编码 每个 LEB128 编码值均由 1-…]]></description><link>https://xianchenxc.github.io/quickjs/leb128/</link><guid isPermaLink="false">https://xianchenxc.github.io/quickjs/leb128/</guid><pubDate>Tue, 21 Sep 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;LEB 128（Little Endian Base 128）是一种变长的整数压缩编码形式。它被应用于 &lt;a href=&quot;https://en.wikipedia.org/wiki/DWARF&quot;&gt;DWARF&lt;/a&gt; debug file format，wasm 的整数字面量的二进制编码，以及 quickjs 的字节码中。&lt;/p&gt;
 &lt;h2&gt;编码&lt;/h2&gt;
-&lt;table&gt;
+&lt;table border=&quot;1&quot;&gt;
   &lt;tr &gt;
     &lt;td colspan=&quot;16&quot;&gt;双字节 LEB128 值的按位图&lt;/td&gt;
   &lt;/tr&gt;
@@ -29,8 +29,8 @@
 &lt;/table&gt;
 &lt;p&gt;每个 LEB128 编码值均由 1-5 个字节组成，共同表示一个 32 位的值。每个字节最高位是信息位，1 表示后续还有字节，0 表示结束；每个字节的剩余 7 位均为有效负荷，即第一个字节中有 7 个最低有效位，第二个字节中也是 7 个，依此类推。&lt;/p&gt;
 &lt;p&gt;LEB128 有两种变体，分为有符号 leb128 和无符号 leb128 两种，两者编码和解码有所差别。&lt;/p&gt;
-&lt;h3&gt;无符号&lt;/h3&gt;
-&lt;p&gt;用 uleb128 编码，主要分为四步：&lt;/p&gt;
+&lt;h3&gt;无符号 leb128&lt;/h3&gt;
+&lt;p&gt;用 uleb128 编码，主要分为五步：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;二进制表示&lt;/li&gt;
 &lt;li&gt;因为信息位是 7 的倍数，所以左侧补 0&lt;/li&gt;
@@ -47,7 +47,7 @@
     0x26     0x8E     0xE5  
 
 → 0xE5 0x8E 0x26            step 5&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3&gt;有符合&lt;/h3&gt;
+&lt;h3&gt;有符号 leb128&lt;/h3&gt;
 &lt;p&gt;和 uleb128 的区别在于，在 step 2 和 step 3 之间，增加计算补码的过程：&lt;/p&gt;
 &lt;p&gt;以 -123456 为例：&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;MSB ------------------ LSB
