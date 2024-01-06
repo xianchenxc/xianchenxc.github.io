@@ -14,6 +14,8 @@ description:
 
 > Dynamic Programming is a computer programming technique where an algorithm probleam is first broken down into sub-problems, the results are saved, and then the sub-problems are optimized to find the overall solution - which usually has to do with finding the maximum and minimum range of the algorithmic query.
 
+动态规划，是一种在数学、管理科学、计算机科学、经济学和生物信息学中使用的，通过把原问题分解为相对简单的子问题的方式求解复杂问题的方法。动态规划常常适用于有重叠子问题和最优子结构性质的问题。
+
 ## How does Dynamic Programming work?
 
 Dynamic Programming works by break down complex problem into **simpler subproblems**. Then, finding optimal solutions to these subproblems. **Memorization** is a method that saves the outcomes of these processes so that the corresponding answers do not need to computed when thery are later needed.
@@ -27,11 +29,11 @@ Dynamic Programming works by break down complex problem into **simpler subproble
 
 ### Top-down approach
 
-自顶而下
+在计算机科学中，我们通常使用递归算法来求解问题。如果子问题存在重叠，则可以通过缓存和记表的方式来减少重复计算。
 
 ### Bottom-up approach
 
-自底而上
+如果一个问题问题可以通过不断
 
 ## Applications
 
@@ -50,3 +52,7 @@ Dynamic Programming works by break down complex problem into **simpler subproble
     maxLeft[i] = Math.max(maxLeft[i - 1], height[i - 1])
 
 这样，计算 maxLeft[i] 的时间复杂度从 O(n) 变成 O(1)，整体复杂度变为 O(n)。
+
+## 参考文档
+
+[What is Dynamic Programming?](https://www.spiceworks.com/tech/devops/articles/what-is-dynamic-programming/)
