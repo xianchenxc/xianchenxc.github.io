@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[HelloCode]]></title><description><![CDATA[A blog recording the good life.]]></description><link>https://xianchenxc.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 06 Jan 2024 10:24:19 GMT</lastBuildDate><item><title><![CDATA[单词本]]></title><description><![CDATA[optimal 最好的，最理想的]]></description><link>https://xianchenxc.github.io/english/words-book/</link><guid isPermaLink="false">https://xianchenxc.github.io/english/words-book/</guid><pubDate>Sat, 06 Jan 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;optimal 最好的，最理想的&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Dynamic Programming]]></title><description><![CDATA[目标： 了解什么是动态规划 理清动态规划的核心原理 常用的动态规划的应用场景 What is Dynamic Programming? Dynamic Programming is a computer programming technique where an…]]></description><link>https://xianchenxc.github.io/re-learning-series/algorithms/dynamic-programming/</link><guid isPermaLink="false">https://xianchenxc.github.io/re-learning-series/algorithms/dynamic-programming/</guid><pubDate>Sat, 06 Jan 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;目标：&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[HelloCode]]></title><description><![CDATA[A blog recording the good life.]]></description><link>https://xianchenxc.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 06 Jan 2024 10:36:37 GMT</lastBuildDate><item><title><![CDATA[单词本]]></title><description><![CDATA[optimal 最好的，最理想的]]></description><link>https://xianchenxc.github.io/english/words-book/</link><guid isPermaLink="false">https://xianchenxc.github.io/english/words-book/</guid><pubDate>Sat, 06 Jan 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;optimal 最好的，最理想的&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Dynamic Programming]]></title><description><![CDATA[目标： 了解什么是动态规划 理清动态规划的核心原理 常用的动态规划的应用场景 What is Dynamic Programming? Dynamic Programming is a computer programming technique where an…]]></description><link>https://xianchenxc.github.io/re-learning-series/algorithms/dynamic-programming/</link><guid isPermaLink="false">https://xianchenxc.github.io/re-learning-series/algorithms/dynamic-programming/</guid><pubDate>Sat, 06 Jan 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;目标：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;了解什么是动态规划&lt;/li&gt;
 &lt;li&gt;理清动态规划的核心原理&lt;/li&gt;
@@ -8,6 +8,7 @@
 &lt;blockquote&gt;
 &lt;p&gt;Dynamic Programming is a computer programming technique where an algorithm probleam is first broken down into sub-problems, the results are saved, and then the sub-problems are optimized to find the overall solution - which usually has to do with finding the maximum and minimum range of the algorithmic query.&lt;/p&gt;
 &lt;/blockquote&gt;
+&lt;p&gt;动态规划，是一种在数学、管理科学、计算机科学、经济学和生物信息学中使用的，通过把原问题分解为相对简单的子问题的方式求解复杂问题的方法。动态规划常常适用于有重叠子问题和最优子结构性质的问题。&lt;/p&gt;
 &lt;h2&gt;How does Dynamic Programming work?&lt;/h2&gt;
 &lt;p&gt;Dynamic Programming works by break down complex problem into &lt;strong&gt;simpler subproblems&lt;/strong&gt;. Then, finding optimal solutions to these subproblems. &lt;strong&gt;Memorization&lt;/strong&gt; is a method that saves the outcomes of these processes so that the corresponding answers do not need to computed when thery are later needed.&lt;/p&gt;
 &lt;p&gt;动态规划的核心思想是：&lt;/p&gt;
@@ -17,9 +18,9 @@
 &lt;/ul&gt;
 &lt;p&gt;动态规划可以通过以下两种方式实现：&lt;/p&gt;
 &lt;h3&gt;Top-down approach&lt;/h3&gt;
-&lt;p&gt;自顶而下&lt;/p&gt;
+&lt;p&gt;在计算机科学中，我们通常使用递归算法来求解问题。如果子问题存在重叠，则可以通过缓存和记表的方式来减少重复计算。&lt;/p&gt;
 &lt;h3&gt;Bottom-up approach&lt;/h3&gt;
-&lt;p&gt;自底而上&lt;/p&gt;
+&lt;p&gt;如果一个问题问题可以通过不断&lt;/p&gt;
 &lt;h2&gt;Applications&lt;/h2&gt;
 &lt;h3&gt;接雨水&lt;/h3&gt;
 &lt;p&gt;问题链接：&lt;a href=&quot;https://leetcode.cn/problems/trapping-rain-water/description/&quot;&gt;https://leetcode.cn/problems/trapping-rain-water/description/&lt;/a&gt;&lt;/p&gt;
@@ -28,7 +29,9 @@
 &lt;p&gt;问题转变为：计算第 i 根柱子左右两边的最大高度，最简单的方法，遍历 [0, i) 和 (i, len)，时间复杂度为 O(n)，整体时间复杂度 O(n^2)&lt;/p&gt;
 &lt;p&gt;我们注意到求 maxLeft[i] 和 maxLeft[i - 1]，其实重复遍历计算了 [0, i - 1]，这是没有必要的，当知道 maxLeft[i - 1] 时，只需要简单比较 maxLeft[i - 1] 和 height[i] 即可：&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;maxLeft[i] = Math.max(maxLeft[i - 1], height[i - 1])&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;这样，计算 maxLeft[i] 的时间复杂度从 O(n) 变成 O(1)，整体复杂度变为 O(n)。&lt;/p&gt;</content:encoded></item><item><title><![CDATA[贪心算法]]></title><description><![CDATA[Greedy Algorithm Introduction 贪心算法是在每一步选择中都选择当前状态下最好或最优的选择，从而希望导致结果时最好或最优的算法。 Props and Cons 优点：简单，易于实现，运行快 缺点：算法经常不能提供全局最优解。 When to Use…]]></description><link>https://xianchenxc.github.io/re-learning-series/algorithms/greedy-algorithm/</link><guid isPermaLink="false">https://xianchenxc.github.io/re-learning-series/algorithms/greedy-algorithm/</guid><pubDate>Sat, 06 Jan 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Greedy Algorithm&lt;/h1&gt;
+&lt;p&gt;这样，计算 maxLeft[i] 的时间复杂度从 O(n) 变成 O(1)，整体复杂度变为 O(n)。&lt;/p&gt;
+&lt;h2&gt;参考文档&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.spiceworks.com/tech/devops/articles/what-is-dynamic-programming/&quot;&gt;What is Dynamic Programming?&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[贪心算法]]></title><description><![CDATA[Greedy Algorithm Introduction 贪心算法是在每一步选择中都选择当前状态下最好或最优的选择，从而希望导致结果时最好或最优的算法。 Props and Cons 优点：简单，易于实现，运行快 缺点：算法经常不能提供全局最优解。 When to Use…]]></description><link>https://xianchenxc.github.io/re-learning-series/algorithms/greedy-algorithm/</link><guid isPermaLink="false">https://xianchenxc.github.io/re-learning-series/algorithms/greedy-algorithm/</guid><pubDate>Sat, 06 Jan 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Greedy Algorithm&lt;/h1&gt;
 &lt;h2&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;贪心算法是在每一步选择中都选择&lt;strong&gt;当前状态&lt;/strong&gt;下最好或最优的选择，从而希望导致结果时最好或最优的算法。&lt;/p&gt;
 &lt;h2&gt;Props and Cons&lt;/h2&gt;
