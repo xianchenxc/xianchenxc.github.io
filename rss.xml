@@ -1,33 +1,83 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[HelloCode]]></title><description><![CDATA[A blog recording the good life.]]></description><link>https://xianchenxc.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 06 Jan 2024 10:36:40 GMT</lastBuildDate><item><title><![CDATA[单词本]]></title><description><![CDATA[optimal 最好的，最理想的]]></description><link>https://xianchenxc.github.io/english/words-book/</link><guid isPermaLink="false">https://xianchenxc.github.io/english/words-book/</guid><pubDate>Sat, 06 Jan 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;optimal 最好的，最理想的&lt;/p&gt;</content:encoded></item><item><title><![CDATA[贪心算法]]></title><description><![CDATA[Greedy Algorithm Introduction 贪心算法是在每一步选择中都选择当前状态下最好或最优的选择，从而希望导致结果时最好或最优的算法。 Props and Cons 优点：简单，易于实现，运行快 缺点：算法经常不能提供全局最优解。 When to Use…]]></description><link>https://xianchenxc.github.io/re-learning-series/algorithms/greedy-algorithm/</link><guid isPermaLink="false">https://xianchenxc.github.io/re-learning-series/algorithms/greedy-algorithm/</guid><pubDate>Sat, 06 Jan 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Greedy Algorithm&lt;/h1&gt;
-&lt;h2&gt;Introduction&lt;/h2&gt;
-&lt;p&gt;贪心算法是在每一步选择中都选择&lt;strong&gt;当前状态&lt;/strong&gt;下最好或最优的选择，从而希望导致结果时最好或最优的算法。&lt;/p&gt;
-&lt;h2&gt;Props and Cons&lt;/h2&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[HelloCode]]></title><description><![CDATA[A blog recording the good life.]]></description><link>https://xianchenxc.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 16 Jan 2024 12:23:39 GMT</lastBuildDate><item><title><![CDATA[No title]]></title><description><![CDATA[2023 梳理 CSS 盒模型 标准盒模型（W3C标准）： 一个块的总宽度 = width + padding(左右) + border(左右) + margin(左右) 怪异盒模型（IE标准）： 一个块的总宽度 = width（包含了 padding、border…]]></description><link>https://xianchenxc.github.io/interview/2023/</link><guid isPermaLink="false">https://xianchenxc.github.io/interview/2023/</guid><content:encoded>&lt;h1&gt;2023 梳理&lt;/h1&gt;
+&lt;h2&gt;CSS&lt;/h2&gt;
+&lt;h3&gt;盒模型&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;优点：简单，易于实现，运行快&lt;/p&gt;
+&lt;li&gt;标准盒模型（W3C标准）：
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;一个块的总宽度 = width + padding(左右) + border(左右) + margin(左右)&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;缺点：算法经常不能提供全局最优解。&lt;/p&gt;
+&lt;li&gt;怪异盒模型（IE标准）：
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;一个块的总宽度 = width（包含了 padding、border 值） + margin(左右)&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;When to Use？&lt;/h2&gt;
-&lt;p&gt;用贪心算法解决的问题需要满足两个特性：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;贪心选择：问题的整体最优解可以通过一系列局部最优的选择来达到&lt;/p&gt;
+&lt;p&gt;通过 css 属性设置盒模型：&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;css&quot;&gt;&lt;pre class=&quot;language-css&quot;&gt;&lt;code class=&quot;language-css&quot;&gt;&lt;span class=&quot;token property&quot;&gt;box-sizing&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; content-box&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &amp;lt;!-- 标准模型 --&gt;
+&lt;span class=&quot;token property&quot;&gt;box-sizing&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; border-box&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;  &amp;lt;!-- IE 模型 --&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;block, inline 和 inline-block 的区别&lt;/h3&gt;
+&lt;p&gt;｜block｜inline｜inline-block｜
+｜-｜-｜-｜
+｜独占一行｜不会独占一行｜不会独占一行｜
+｜可以设置宽高｜不可设置宽高｜可以设置宽高｜
+｜内外边距可以设置｜只能设置水平方向，垂直方向无效｜内外边距可以设置｜&lt;/p&gt;
+&lt;h3&gt;display: none, visibility: hidden 和 opacity:0 的区别&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;display: none&lt;/code&gt;	          不占空间，不可点击	（回流 + 重绘）&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;visibility: hidden&lt;/code&gt;	      占据空间，不可点击	（重绘）&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;opacity: 0&lt;/code&gt;	              占据空间，可以点击	（重建图层，性能较高）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;position&lt;/h3&gt;
+&lt;p&gt;｜值｜是否脱离文档流｜描述｜
+｜-｜-｜-｜
+｜static｜否｜默认定位方式｜
+｜relative｜否｜相对其在文档流的位置进行定位｜
+｜absolute｜是｜相对于上一个非 static 的父元素进行定位｜
+｜fixed｜是｜固定定位，相对于浏览器窗口进行定位｜&lt;/p&gt;
+&lt;h3&gt;BFC&lt;/h3&gt;
+&lt;h3&gt;CSS 选择器&lt;/h3&gt;
+&lt;p&gt;常用选择器：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;ID 选择器&lt;/li&gt;
+&lt;li&gt;class 选择器&lt;/li&gt;
+&lt;li&gt;标签选择器&lt;/li&gt;
+&lt;li&gt;一般兄弟选择器：p ~ span&lt;/li&gt;
+&lt;li&gt;紧连兄弟选择器：button + button&lt;/li&gt;
+&lt;li&gt;子代选择器：.content &gt; div&lt;/li&gt;
+&lt;li&gt;后代选择器：.content div&lt;/li&gt;
+&lt;li&gt;通配符选择器：*&lt;/li&gt;
+&lt;li&gt;属性选择器：a[data-id=test]&lt;/li&gt;
+&lt;li&gt;伪类选择器：a:hover&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;优先级算法：&lt;/p&gt;
+&lt;p&gt;同权重下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;优先级就近原则，样式定义最近者为准&lt;/li&gt;
+&lt;li&gt;载入样式以最后载入的定位为准&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;优先级：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;同权重下: 内联样式表（标签内部）&gt; 嵌入样式表（当前文件中）&gt; 外部样式表（外部文件中）&lt;/li&gt;
+&lt;li&gt;!important &gt; id &gt; class &gt; tag&lt;/li&gt;
+&lt;li&gt;!important 比 内联优先级高&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;常见布局&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;水平垂直居中
+&lt;ul&gt;
+&lt;li&gt;绝对定位 + 自动 margin&lt;/li&gt;
+&lt;li&gt;绝对定位 + transform&lt;/li&gt;
+&lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;最优子结构：问题的最优解包含其子问题的最优解&lt;/p&gt;
+&lt;li&gt;两列布局
+&lt;ul&gt;
+&lt;li&gt;float 布局&lt;/li&gt;
+&lt;li&gt;flex 布局&lt;/li&gt;
+&lt;/ul&gt;
 &lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2&gt;Applications&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=poWB2UCuozA&quot;&gt;Activity Selection Problem&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Huffman Coding&lt;/li&gt;
-&lt;li&gt;Job Sequencing Problem&lt;/li&gt;
-&lt;li&gt;Fractional Knapsack Problem&lt;/li&gt;
-&lt;li&gt;Prim’s Minimum Spanning Tree&lt;/li&gt;
-&lt;/ol&gt;</content:encoded></item><item><title><![CDATA[Dynamic Programming]]></title><description><![CDATA[目标： 了解什么是动态规划 理清动态规划的核心原理 常用的动态规划的应用场景 What is Dynamic Programming? Dynamic Programming is a computer programming technique where an…]]></description><link>https://xianchenxc.github.io/re-learning-series/algorithms/dynamic-programming/</link><guid isPermaLink="false">https://xianchenxc.github.io/re-learning-series/algorithms/dynamic-programming/</guid><pubDate>Sat, 06 Jan 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;目标：&lt;/p&gt;
+&lt;li&gt;三列布局&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[单词本]]></title><description><![CDATA[optimal 最好的，最理想的]]></description><link>https://xianchenxc.github.io/english/words-book/</link><guid isPermaLink="false">https://xianchenxc.github.io/english/words-book/</guid><pubDate>Sat, 06 Jan 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;optimal 最好的，最理想的&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Dynamic Programming]]></title><description><![CDATA[目标： 了解什么是动态规划 理清动态规划的核心原理 常用的动态规划的应用场景 What is Dynamic Programming? Dynamic Programming is a computer programming technique where an…]]></description><link>https://xianchenxc.github.io/re-learning-series/algorithms/dynamic-programming/</link><guid isPermaLink="false">https://xianchenxc.github.io/re-learning-series/algorithms/dynamic-programming/</guid><pubDate>Sat, 06 Jan 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;目标：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;了解什么是动态规划&lt;/li&gt;
 &lt;li&gt;理清动态规划的核心原理&lt;/li&gt;
@@ -60,7 +110,36 @@
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;maxLeft[i] = Math.max(maxLeft[i - 1], height[i - 1])&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;这样，计算 maxLeft[i] 的时间复杂度从 O(n) 变成 O(1)，整体复杂度变为 O(n)。&lt;/p&gt;
 &lt;h2&gt;参考文档&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&quot;https://www.spiceworks.com/tech/devops/articles/what-is-dynamic-programming/&quot;&gt;What is Dynamic Programming?&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[LEB128 编码格式]]></title><description><![CDATA[LEB 128（Little Endian Base 128）是一种变长的整数压缩编码形式。它被应用于 DWARF debug file format，wasm 的整数字面量的二进制编码，以及 quickjs 的字节码中。 编码 每个 LEB128 编码值均由 1-…]]></description><link>https://xianchenxc.github.io/quickjs/leb128/</link><guid isPermaLink="false">https://xianchenxc.github.io/quickjs/leb128/</guid><pubDate>Tue, 21 Sep 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;LEB 128（Little Endian Base 128）是一种变长的整数压缩编码形式。它被应用于 &lt;a href=&quot;https://en.wikipedia.org/wiki/DWARF&quot;&gt;DWARF&lt;/a&gt; debug file format，wasm 的整数字面量的二进制编码，以及 quickjs 的字节码中。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.spiceworks.com/tech/devops/articles/what-is-dynamic-programming/&quot;&gt;What is Dynamic Programming?&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[贪心算法]]></title><description><![CDATA[Greedy Algorithm Introduction 贪心算法是在每一步选择中都选择当前状态下最好或最优的选择，从而希望导致结果时最好或最优的算法。 Props and Cons 优点：简单，易于实现，运行快 缺点：算法经常不能提供全局最优解。 When to Use…]]></description><link>https://xianchenxc.github.io/re-learning-series/algorithms/greedy-algorithm/</link><guid isPermaLink="false">https://xianchenxc.github.io/re-learning-series/algorithms/greedy-algorithm/</guid><pubDate>Sat, 06 Jan 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Greedy Algorithm&lt;/h1&gt;
+&lt;h2&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;贪心算法是在每一步选择中都选择&lt;strong&gt;当前状态&lt;/strong&gt;下最好或最优的选择，从而希望导致结果时最好或最优的算法。&lt;/p&gt;
+&lt;h2&gt;Props and Cons&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;优点：简单，易于实现，运行快&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;缺点：算法经常不能提供全局最优解。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;When to Use？&lt;/h2&gt;
+&lt;p&gt;用贪心算法解决的问题需要满足两个特性：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;贪心选择：问题的整体最优解可以通过一系列局部最优的选择来达到&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;最优子结构：问题的最优解包含其子问题的最优解&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;Applications&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=poWB2UCuozA&quot;&gt;Activity Selection Problem&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Huffman Coding&lt;/li&gt;
+&lt;li&gt;Job Sequencing Problem&lt;/li&gt;
+&lt;li&gt;Fractional Knapsack Problem&lt;/li&gt;
+&lt;li&gt;Prim’s Minimum Spanning Tree&lt;/li&gt;
+&lt;/ol&gt;</content:encoded></item><item><title><![CDATA[LEB128 编码格式]]></title><description><![CDATA[LEB 128（Little Endian Base 128）是一种变长的整数压缩编码形式。它被应用于 DWARF debug file format，wasm 的整数字面量的二进制编码，以及 quickjs 的字节码中。 编码 每个 LEB128 编码值均由 1-…]]></description><link>https://xianchenxc.github.io/quickjs/leb128/</link><guid isPermaLink="false">https://xianchenxc.github.io/quickjs/leb128/</guid><pubDate>Tue, 21 Sep 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;LEB 128（Little Endian Base 128）是一种变长的整数压缩编码形式。它被应用于 &lt;a href=&quot;https://en.wikipedia.org/wiki/DWARF&quot;&gt;DWARF&lt;/a&gt; debug file format，wasm 的整数字面量的二进制编码，以及 quickjs 的字节码中。&lt;/p&gt;
 &lt;h2&gt;编码&lt;/h2&gt;
 &lt;table border=&quot;1&quot;&gt;
   &lt;tr &gt;
