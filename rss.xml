@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[HelloCode]]></title><description><![CDATA[A blog recording the good life.]]></description><link>https://xianchenxc.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 20 Jan 2024 08:42:25 GMT</lastBuildDate><item><title><![CDATA[No title]]></title><description><![CDATA[2023 梳理 CSS 盒模型 标准盒模型（W3C标准）： 一个块的总宽度 = width + padding(左右) + border(左右) + margin(左右) 怪异盒模型（IE标准）： 一个块的总宽度 = width（包含了 padding、border…]]></description><link>https://xianchenxc.github.io/interview/2023/</link><guid isPermaLink="false">https://xianchenxc.github.io/interview/2023/</guid><content:encoded>&lt;h1&gt;2023 梳理&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[HelloCode]]></title><description><![CDATA[A blog recording the good life.]]></description><link>https://xianchenxc.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 20 Jan 2024 10:18:00 GMT</lastBuildDate><item><title><![CDATA[2023 梳理]]></title><description><![CDATA[2023 梳理 CSS 盒模型 标准盒模型（W3C标准）： 一个块的总宽度 = width + padding(左右) + border(左右) + margin(左右) 怪异盒模型（IE标准）： 一个块的总宽度 = width（包含了 padding、border…]]></description><link>https://xianchenxc.github.io/interview/2023/</link><guid isPermaLink="false">https://xianchenxc.github.io/interview/2023/</guid><pubDate>Sat, 20 Jan 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;2023 梳理&lt;/h1&gt;
 &lt;h2&gt;CSS&lt;/h2&gt;
 &lt;h3&gt;盒模型&lt;/h3&gt;
 &lt;ul&gt;
@@ -152,7 +152,58 @@
 |Number|number|
 |Boolean|boolean|
 |Symbol|symbol|
-|Bigint|bigint|&lt;/p&gt;</content:encoded></item><item><title><![CDATA[单词本]]></title><description><![CDATA[optimal 最好的，最理想的]]></description><link>https://xianchenxc.github.io/english/words-book/</link><guid isPermaLink="false">https://xianchenxc.github.io/english/words-book/</guid><pubDate>Sat, 06 Jan 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;optimal 最好的，最理想的&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Dynamic Programming]]></title><description><![CDATA[目标： 了解什么是动态规划 理清动态规划的核心原理 常用的动态规划的应用场景 What is Dynamic Programming? Dynamic Programming is a computer programming technique where an…]]></description><link>https://xianchenxc.github.io/re-learning-series/algorithms/dynamic-programming/</link><guid isPermaLink="false">https://xianchenxc.github.io/re-learning-series/algorithms/dynamic-programming/</guid><pubDate>Sat, 06 Jan 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;目标：&lt;/p&gt;
+|Bigint|bigint|&lt;/p&gt;
+&lt;h3&gt;Function&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;typeof 返回 “function”&lt;/li&gt;
+&lt;li&gt;声明提升&lt;/li&gt;
+&lt;li&gt;this 指向&lt;/li&gt;
+&lt;li&gt;作用域 &amp;#x26; 作用域链&lt;/li&gt;
+&lt;li&gt;闭包：理解/使用场景&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;对象&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;new 做了什么？&lt;/li&gt;
+&lt;li&gt;call/apply 更改 this 指向&lt;/li&gt;
+&lt;li&gt;原型 &amp;#x26; 原型链&lt;/li&gt;
+&lt;li&gt;继承&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;模块&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;iife&lt;/li&gt;
+&lt;li&gt;规范：commonjs/amd/cmd/es6 模块&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;dom&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;dom 获取/操作&lt;/li&gt;
+&lt;li&gt;事件流：捕获阶段/目标阶段/冒泡阶段&lt;/li&gt;
+&lt;li&gt;事件委托和代理&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Event loop&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;渲染进程
+&lt;ul&gt;
+&lt;li&gt;GPU 渲染线程
+&lt;ul&gt;
+&lt;li&gt;解析 html，css&lt;/li&gt;
+&lt;li&gt;构建 dom，cssom/render 树&lt;/li&gt;
+&lt;li&gt;初始布局与绘制&lt;/li&gt;
+&lt;li&gt;回流和重绘&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;JS 引擎线程
+&lt;ul&gt;
+&lt;li&gt;一个主线程与多个辅助线程&lt;/li&gt;
+&lt;li&gt;解析 js&lt;/li&gt;
+&lt;li&gt;运行 js&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;网络进程&lt;/li&gt;
+&lt;li&gt;GPU进程（动画与3D）&lt;/li&gt;
+&lt;li&gt;插件进程&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[单词本]]></title><description><![CDATA[optimal 最好的，最理想的]]></description><link>https://xianchenxc.github.io/english/words-book/</link><guid isPermaLink="false">https://xianchenxc.github.io/english/words-book/</guid><pubDate>Sat, 06 Jan 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;optimal 最好的，最理想的&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Dynamic Programming]]></title><description><![CDATA[目标： 了解什么是动态规划 理清动态规划的核心原理 常用的动态规划的应用场景 What is Dynamic Programming? Dynamic Programming is a computer programming technique where an…]]></description><link>https://xianchenxc.github.io/re-learning-series/algorithms/dynamic-programming/</link><guid isPermaLink="false">https://xianchenxc.github.io/re-learning-series/algorithms/dynamic-programming/</guid><pubDate>Sat, 06 Jan 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;目标：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;了解什么是动态规划&lt;/li&gt;
 &lt;li&gt;理清动态规划的核心原理&lt;/li&gt;
