@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[HelloCode]]></title><description><![CDATA[A blog recording the good life.]]></description><link>https://xianchenxc.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 20 Jan 2024 10:18:09 GMT</lastBuildDate><item><title><![CDATA[2023 梳理]]></title><description><![CDATA[2023 梳理 CSS 盒模型 标准盒模型（W3C标准）： 一个块的总宽度 = width + padding(左右) + border(左右) + margin(左右) 怪异盒模型（IE标准）： 一个块的总宽度 = width（包含了 padding、border…]]></description><link>https://xianchenxc.github.io/interview/2023/</link><guid isPermaLink="false">https://xianchenxc.github.io/interview/2023/</guid><pubDate>Sat, 20 Jan 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;2023 梳理&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[HelloCode]]></title><description><![CDATA[A blog recording the good life.]]></description><link>https://xianchenxc.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 20 Jan 2024 10:23:11 GMT</lastBuildDate><item><title><![CDATA[2023 梳理]]></title><description><![CDATA[2023 梳理 CSS 盒模型 标准盒模型（W3C标准）： 一个块的总宽度 = width + padding(左右) + border(左右) + margin(左右) 怪异盒模型（IE标准）： 一个块的总宽度 = width（包含了 padding、border…]]></description><link>https://xianchenxc.github.io/interview/2023/</link><guid isPermaLink="false">https://xianchenxc.github.io/interview/2023/</guid><pubDate>Sat, 20 Jan 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;2023 梳理&lt;/h1&gt;
 &lt;h2&gt;CSS&lt;/h2&gt;
 &lt;h3&gt;盒模型&lt;/h3&gt;
 &lt;ul&gt;
@@ -17,11 +17,32 @@
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;css&quot;&gt;&lt;pre class=&quot;language-css&quot;&gt;&lt;code class=&quot;language-css&quot;&gt;&lt;span class=&quot;token property&quot;&gt;box-sizing&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; content-box&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &amp;lt;!-- 标准模型 --&gt;
 &lt;span class=&quot;token property&quot;&gt;box-sizing&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; border-box&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;  &amp;lt;!-- IE 模型 --&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h3&gt;block, inline 和 inline-block 的区别&lt;/h3&gt;
-&lt;p&gt;｜block｜inline｜inline-block｜
-｜-｜-｜-｜
-｜独占一行｜不会独占一行｜不会独占一行｜
-｜可以设置宽高｜不可设置宽高｜可以设置宽高｜
-｜内外边距可以设置｜只能设置水平方向，垂直方向无效｜内外边距可以设置｜&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;block&lt;/th&gt;
+&lt;th&gt;inline&lt;/th&gt;
+&lt;th&gt;inline-block&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;独占一行&lt;/td&gt;
+&lt;td&gt;不会独占一行&lt;/td&gt;
+&lt;td&gt;不会独占一行&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;可以设置宽高&lt;/td&gt;
+&lt;td&gt;不可设置宽高&lt;/td&gt;
+&lt;td&gt;可以设置宽高&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;内外边距可以设置&lt;/td&gt;
+&lt;td&gt;只能设置水平方向，垂直方向无效&lt;/td&gt;
+&lt;td&gt;内外边距可以设置&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
 &lt;h3&gt;display: none, visibility: hidden 和 opacity:0 的区别&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;display: none&lt;/code&gt;	          不占空间，不可点击	（回流 + 重绘）&lt;/li&gt;
@@ -29,12 +50,37 @@
 &lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;opacity: 0&lt;/code&gt;	              占据空间，可以点击	（重建图层，性能较高）&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;position&lt;/h3&gt;
-&lt;p&gt;｜值｜是否脱离文档流｜描述｜
-｜-｜-｜-｜
-｜static｜否｜默认定位方式｜
-｜relative｜否｜相对其在文档流的位置进行定位｜
-｜absolute｜是｜相对于上一个非 static 的父元素进行定位｜
-｜fixed｜是｜固定定位，相对于浏览器窗口进行定位｜&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;值&lt;/th&gt;
+&lt;th&gt;是否脱离文档流&lt;/th&gt;
+&lt;th&gt;描述&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;static&lt;/td&gt;
+&lt;td&gt;否&lt;/td&gt;
+&lt;td&gt;默认定位方式&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;relative&lt;/td&gt;
+&lt;td&gt;否&lt;/td&gt;
+&lt;td&gt;相对其在文档流的位置进行定位&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;absolute&lt;/td&gt;
+&lt;td&gt;是&lt;/td&gt;
+&lt;td&gt;相对于上一个非 static 的父元素进行定位&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;fixed&lt;/td&gt;
+&lt;td&gt;是&lt;/td&gt;
+&lt;td&gt;固定定位，相对于浏览器窗口进行定位&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
 &lt;h3&gt;BFC&lt;/h3&gt;
 &lt;h3&gt;CSS 选择器&lt;/h3&gt;
 &lt;p&gt;常用选择器：&lt;/p&gt;
@@ -144,15 +190,44 @@
 &lt;/ul&gt;
 &lt;h2&gt;Javascript&lt;/h2&gt;
 &lt;h3&gt;JS 类型&lt;/h3&gt;
-&lt;p&gt;|类型|typeof 返回值|
-｜-｜-｜
-|Undefined｜undefined｜
-|Null|object|
-|String| string|
-|Number|number|
-|Boolean|boolean|
-|Symbol|symbol|
-|Bigint|bigint|&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;类型&lt;/th&gt;
+&lt;th&gt;typeof 返回值&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Undefined&lt;/td&gt;
+&lt;td&gt;undefined&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Null&lt;/td&gt;
+&lt;td&gt;object&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;string&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Number&lt;/td&gt;
+&lt;td&gt;number&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Boolean&lt;/td&gt;
+&lt;td&gt;boolean&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Symbol&lt;/td&gt;
+&lt;td&gt;symbol&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Bigint&lt;/td&gt;
+&lt;td&gt;bigint&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
 &lt;h3&gt;Function&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;typeof 返回 “function”&lt;/li&gt;
