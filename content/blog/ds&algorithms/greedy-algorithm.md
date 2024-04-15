@@ -4,8 +4,6 @@ date: 2024-01-06
 description: 
 ---
 
-# Greedy Algorithm
-
 ## Introduction
 
 贪心算法是在每一步选择中都选择**当前状态**下最好或最优的选择，从而希望导致结果时最好或最优的算法。
@@ -13,7 +11,6 @@ description:
 ## Props and Cons
 
 - 优点：简单，易于实现，运行快
-  
 - 缺点：算法经常不能提供全局最优解。
 
 ## When to Use？

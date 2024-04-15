@@ -60,6 +60,7 @@
   --color-heading: #1a202c;
   --color-heading-black: black;
   --color-accent: #d1dce5;
+  --bg-color-primary: rgba(60, 179, 113, 0.2);
 }
 
 /* HTML elements */
@@ -163,7 +164,7 @@ p {
   line-height: var(--lineHeight-relaxed);
   --baseline-multiplier: 0.179;
   --x-height-multiplier: 0.35;
-  margin: var(--spacing-0) var(--spacing-0) var(--spacing-8) var(--spacing-0);
+  margin: var(--spacing-0) var(--spacing-0) var(--spacing-4) var(--spacing-0);
   padding: var(--spacing-0);
 }
 
@@ -173,7 +174,7 @@ ol {
   margin-right: var(--spacing-0);
   padding: var(--spacing-0);
   margin-bottom: var(--spacing-8);
-  list-style-position: outside;
+  list-style-position: inside;
   list-style-image: none;
 }
 
@@ -279,6 +280,15 @@ a:focus {
   margin-bottom: var(--spacing-4);
 }
 
+.post-list-item-tag {
+  display: inline-block;
+  margin-right: var(--spacing-2);
+  padding: 0 var(--spacing-1);
+  background-color: var(--bg-color-primary);
+  border-radius: 4px;
+  font-size: 0.7rem;
+}
+
 .header-link-home {
   font-weight: var(--fontWeight-bold);
   font-family: var(--font-heading);
@@ -330,8 +340,4 @@ a:focus {
   ol {
     list-style-position: inside;
   }
-}
-
-section[itemprop = articleBody] p {
-  text-indent: 2em; /*首行缩进*/
 }
