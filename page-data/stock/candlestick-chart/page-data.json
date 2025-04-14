@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-blog-post-js",
+    "path": "/stock/candlestick-chart/",
+    "result": {"data":{"site":{"siteMetadata":{"title":"HelloCode"}},"markdownRemark":{"id":"2866f951-4140-5c76-9e6a-91339d3f7948","excerpt":"","html":"","frontmatter":{"title":"K 线基础","date":"December 07, 2024","description":null}},"previous":{"fields":{"slug":"/web3/uniswap-develop/"},"frontmatter":{"title":"Uniswap Developer Docs"}},"next":{"fields":{"slug":"/web3/smart-contracts/"},"frontmatter":{"title":"Smart Contract Develop"}}},"pageContext":{"id":"2866f951-4140-5c76-9e6a-91339d3f7948","previousPostId":"5fddb115-2855-53e3-9291-fa62d97299a8","nextPostId":"b55c4af8-b014-59a4-a655-a2145a1258a7"}},
+    "staticQueryHashes": ["2841359383","3257411868"]}
