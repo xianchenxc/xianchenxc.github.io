@@ -46,6 +46,13 @@ module.exports = {
           `gatsby-remark-prismjs`,
           `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,
+          {
+            resolve: `gatsby-remark-katex`,
+            options: {
+              // Add any KaTeX options from https://github.com/KaTeX/KaTeX/blob/master/docs/options.md here
+              strict: `ignore`
+            }
+          }
         ],
       },
     },
@@ -126,5 +133,19 @@ module.exports = {
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
+    {
+      resolve: `gatsby-transformer-katex`,
+      options: {
+        process: [
+          {
+            type: `node__article`,
+            fields: [
+              `body.processed`,
+              { field_with_array_of_objects: "processed" },
+            ],
+          },
+        ],
+      },
+    },
   ],
 }
