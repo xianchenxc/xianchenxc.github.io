@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[HelloCode]]></title><description><![CDATA[A blog recording the good life.]]></description><link>https://xianchenxc.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Fri, 25 Apr 2025 15:51:01 GMT</lastBuildDate><item><title><![CDATA[Gradient descent]]></title><description><![CDATA[梯度下降是一种优化算法，广泛用于机器学习中，目的是通过迭代调整模型参数，最小化损失函数（即预测误差）。 核心概念 损失函数 衡量模型预测值与真实值（训练集）之间的误差，例如均方误差（MSE…]]></description><link>https://xianchenxc.github.io/AI/gradient-descent/</link><guid isPermaLink="false">https://xianchenxc.github.io/AI/gradient-descent/</guid><pubDate>Fri, 25 Apr 2025 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;梯度下降是一种优化算法，广泛用于机器学习中，目的是通过迭代调整模型参数，最小化损失函数（即预测误差）。&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[HelloCode]]></title><description><![CDATA[A blog recording the good life.]]></description><link>https://xianchenxc.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 26 Apr 2025 14:07:55 GMT</lastBuildDate><item><title><![CDATA[Gradient descent]]></title><description><![CDATA[梯度下降是一种优化算法，广泛用于机器学习中，目的是通过迭代调整模型参数，最小化损失函数（即预测误差）。 核心概念 损失函数 衡量模型预测值与真实值（训练集）之间的误差，例如均方误差（MSE…]]></description><link>https://xianchenxc.github.io/AI/gradient-descent/</link><guid isPermaLink="false">https://xianchenxc.github.io/AI/gradient-descent/</guid><pubDate>Fri, 25 Apr 2025 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;梯度下降是一种优化算法，广泛用于机器学习中，目的是通过迭代调整模型参数，最小化损失函数（即预测误差）。&lt;/p&gt;
 &lt;h2&gt;核心概念&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;损失函数&lt;/li&gt;
@@ -46,10 +46,21 @@
 &lt;li&gt;需调参（如学习率、batch 大小）&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;收敛：当梯度接近 0 或损失变化很小时，算法停止
-&lt;div class=&quot;math math-display&quot;&gt;&lt;span class=&quot;katex-display&quot;&gt;&lt;span class=&quot;katex&quot;&gt;&lt;span class=&quot;katex-mathml&quot;&gt;&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot; display=&quot;block&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&quot;katex-html&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;
-&lt;/li&gt;
-&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Linear Regression]]></title><description><![CDATA[线性回归用于预测连续型输出(即回归问题)。它的核心思想是通过找到一条最佳直线(或超平面)，来描述输入特征（自变量）与输出值（因变量）直接的线性关系。 核心概念 模型假设 假设输出 y 可以表示为输入特征 , , …,  的线性组合： 目标 通过训练数据，找到一组权重 w…]]></description><link>https://xianchenxc.github.io/AI/linear-regression/</link><guid isPermaLink="false">https://xianchenxc.github.io/AI/linear-regression/</guid><pubDate>Mon, 14 Apr 2025 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;线性回归用于预测&lt;strong&gt;连续型输出(即回归问题)&lt;/strong&gt;。它的核心思想是通过找到一条最佳直线(或超平面)，来描述输入特征（自变量）与输出值（因变量）直接的线性关系。&lt;/p&gt;
+&lt;li&gt;收敛：当梯度接近 0 或损失变化很小时，算法停止&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;梯度下降的变种&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;批量梯度下降(Batch Gradient Descent)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;每次用&lt;strong&gt;全部训练数据&lt;/strong&gt;计算梯度，精确但慢&lt;/p&gt;
+&lt;ol start=&quot;2&quot;&gt;
+&lt;li&gt;随机梯度下降(Stochastic Gradient Descent)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;每次只用一个样本计算梯度，快但可能震荡&lt;/p&gt;
+&lt;ol start=&quot;3&quot;&gt;
+&lt;li&gt;小批量梯度下降(Mini-Batch Gradient Descent)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;折中方案，用一小部分数据（batch）计算梯度，平衡速度和稳定性&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Linear Regression]]></title><description><![CDATA[线性回归用于预测连续型输出(即回归问题)。它的核心思想是通过找到一条最佳直线(或超平面)，来描述输入特征（自变量）与输出值（因变量）直接的线性关系。 核心概念 模型假设 假设输出 y 可以表示为输入特征 , , …,  的线性组合： 目标 通过训练数据，找到一组权重 w…]]></description><link>https://xianchenxc.github.io/AI/linear-regression/</link><guid isPermaLink="false">https://xianchenxc.github.io/AI/linear-regression/</guid><pubDate>Mon, 14 Apr 2025 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;线性回归用于预测&lt;strong&gt;连续型输出(即回归问题)&lt;/strong&gt;。它的核心思想是通过找到一条最佳直线(或超平面)，来描述输入特征（自变量）与输出值（因变量）直接的线性关系。&lt;/p&gt;
 &lt;h2&gt;核心概念&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;模型假设&lt;/li&gt;
