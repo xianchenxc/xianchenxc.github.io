@@ -41,6 +41,7 @@ $$
 简化：
 
 $$
+  \def\modelF{f_{\vec{w}, b}(\vec{x}^{(i)})}
   L(\modelF,y^{(i)}) = -y^{(i)}log(\modelF) - (1-y^{(i)})log(1-\modelF)
 $$
 
